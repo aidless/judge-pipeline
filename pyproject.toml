@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "judge-pipeline"
+version = "0.1.0"
+description = "抖音收藏判读六步闭环：可安装 skill + 带退出码的结构断言 CLI"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "liuzewen" }]
+keywords = ["douyin", "judgment", "pipeline", "gate", "skill", "exit-code"]
+dependencies = []
+
+[project.scripts]
+judge-pipeline = "judge_pipeline.cli:main"
+
+[tool.setuptools]
+packages = ["judge_pipeline"]
