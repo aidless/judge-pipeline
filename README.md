@@ -62,4 +62,17 @@ python3 -m unittest discover -s tests
 - `CENSUS.md`：`MUST_BUILD_NEW` 判决与谓词。
 - `.github/workflows/ci.yml`：Python 3.11，push/PR 跑 unittest + selftest。
 
+## 同套工具：判据工具链四仓
+
+judge-pipeline 把六步判读闭环固化成带退出码的结构闸，另外三仓分别管"判据从哪来 / 省了多少 token / 任意产物过不过规则"——同一主题：把判据从注释变成会变红的退出码。都是从抖音收藏 63 批判读里长出来的可复用资产：
+
+| 仓 | 回答的问题 | 核验数字 |
+|---|---|---|
+| [agent-judgment-skills](https://github.com/aidless/agent-judgment-skills) | 判据 skill 从哪来？ | 44 个逐字保留的 SKILL.md，6 类 |
+| [token-ruler](https://github.com/aidless/token-ruler) | 省了多少 token、什么口径？ | char4/word/tiktoken 三方法，8 unittest |
+| [gate-runner](https://github.com/aidless/gate-runner) | 任意产物过不过一组规则？ | 四类规则 + 正控/三注入违规 selftest |
+| [judge-pipeline](https://github.com/aidless/judge-pipeline) | 一份判读稿结构合格吗？ | 五组断言 + tier63 真样例 A2/B6/C2 |
+
+顶层汇总：[JUDGMENT_TOOLKIT.md](https://github.com/aidless/aidless/blob/main/JUDGMENT_TOOLKIT.md)。四仓均 v0.1.0、CI 全绿。
+
 MIT © liuzewen.
